@@ -15,11 +15,13 @@ which can be executed from the command line with the command `./soccer_master`
 - For Windows, it will generate a `soccer_master.exe` file 
 which can then be executed with the command `soccer_master.exe`.
 
-In either environment you can either provide a file to be read as argument to the above command or use a pipe to feed input to the executable.
-if no argument or pipe is provided, the app will await standard input.
+In either environment the two main modes of operation are to either pipe results into application like so:
+- `cat .\prompt\sample-input.txt | ./soccer_master`
 
-In addition, once you have Go, you can always run the program in the development way by 
-simply executing the command `go run .`
+or pass the filepath of a file to be read for input as an argument like so 
+- `./soccer_master .\prompt\sample-input.txt`
+
+If no argument or pipe is provided the app will await standard input.
 
 ### Testing
 To test you will first need Go installed on your machine, see the Building instructions above.
