@@ -3,7 +3,7 @@
 ### Building/Running
 
 In order to build the application you will need Go installed on your machine. 
-Instruction for doing so can be found [here](https://go.dev/doc/install).
+Instructions for doing so can be found [here](https://go.dev/doc/install).
 
 Once you have Go on your machine, simply run `go build` in the base directory of the application.
 
@@ -12,8 +12,8 @@ The build results will be different if you are on Linux/Mac or Windows.
 - For Linux/Mac, it will generate a `soccer_master` file 
 which can be executed from the command line with the command `./soccer_master`
 
-- For Windows, it will generate a `soccer_master.go.exe` file 
-which can then be executed with the command `soccer_master.go.exe`.
+- For Windows, it will generate a `soccer_master.exe` file 
+which can then be executed with the command `soccer_master.exe`.
 
 In either environment you can either provide a file to be read as argument to the above command or use a pipe to feed input to the executable.
 if no argument or pipe is provided, the app will await standard input.
