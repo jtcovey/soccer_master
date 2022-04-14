@@ -65,8 +65,8 @@ func main() {
 		match, err := getMatchResult(line, matchRegex)
 
 		if err == nil {
-			// If day is over, announce winners and start new day
 			if isMatchDayOver(match, matchDay) {
+				// announce winners and start new match day
 				updateSeason(matchDay, season)
 				announceMatchDay(season, matchDayCount, os.Stdout)
 				matchDay = make(map[string]int)
