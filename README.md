@@ -13,7 +13,7 @@ The build results will be different if you are on Linux/Mac or Windows.
 which can be executed from the command line with the command `./soccer_master`
 
 - For Windows, it will generate a `soccer_master.exe` file 
-which can then be executed with the command `soccer_master.exe`.
+which can be executed with the command `soccer_master.exe`.
 
 In either environment the two main modes of operation are to either pipe results into application like so:
 - `cat .\prompt\sample-input.txt | ./soccer_master`
@@ -27,12 +27,12 @@ If no argument or pipe is provided the app will await standard input.
 To test you will first need Go installed on your machine, see the Building instructions above.
 
 With Go installed, to run the automated tests simply run `go test -v` from the projects 
-main directory.
+base directory.
 
 
 ### Design
 
-The design of the app is to turn either the file supplied or standard in into a bufio Scanner,
+The design of the app is to turn either the file supplied or standard input into a bufio Scanner,
 then read line by line. Each line is first split by comma, then each half is parsed for team 
 name and score. Then points are awarded to the teams based on the game results.
 The points are stored in two maps, one for the game day currently being played and one for the 
