@@ -1,6 +1,7 @@
 ## Soccer Master by Justin Covey
 
-### Building
+### Building/Running
+
 In order to build the application you will need Go installed on your machine. 
 Instruction for doing so can be found [here](https://go.dev/doc/install).
 
@@ -16,6 +17,9 @@ which can then be executed with the command `soccer_master.go.exe`.
 
 In either environment you can either provide a file to be read as argument to the above command or use a pipe to feed input to the executable.
 if no argument or pipe is provided, the app will await standard input.
+
+In addition, once you have Go, you can always run the program in the development way by 
+simply executing the command `go run .`
 
 ### Testing
 To test you will first need Go installed on your machine, see the Building instructions above.
