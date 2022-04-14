@@ -19,20 +19,20 @@ type matchResult struct {
 	team2score int
 }
 
-type TeamScoring struct {
+type TeamRanking struct {
 	TeamName string
-	Score    int
+	Points   int
 }
 
-type MatchDay []TeamScoring
+type MatchDay []TeamRanking
 
 func (m MatchDay) Len() int      { return len(m) }
 func (m MatchDay) Swap(i, j int) { m[i], m[j] = m[j], m[i] }
 func (m MatchDay) Less(i, j int) bool {
-	if m[i].Score == m[j].Score {
+	if m[i].Points == m[j].Points {
 		return m[i].TeamName < m[j].TeamName
 	}
-	return m[i].Score > m[j].Score
+	return m[i].Points > m[j].Points
 }
 
 var matchRegex = regexp.MustCompile(`(\D+\s)+(\d+)$`)
@@ -144,7 +144,7 @@ func announceMatchDay(season map[string]int, matchDayCount int, w io.Writer) {
 	sortedSeason := make(MatchDay, len(season))
 	i := 0
 	for t, s := range season {
-		sortedSeason[i] = TeamScoring{t, s}
+		sortedSeason[i] = TeamRanking{t, s}
 		i++
 	}
 	sort.Sort(sortedSeason)
@@ -153,7 +153,7 @@ func announceMatchDay(season map[string]int, matchDayCount int, w io.Writer) {
 
 	for i := 0; i < 3; i++ {
 		if len(sortedSeason) > i {
-			fmt.Fprintf(w, sortedSeason[i].TeamName+", %d pts\n", sortedSeason[i].Score)
+			fmt.Fprintf(w, sortedSeason[i].TeamName+", %d pts\n", sortedSeason[i].Points)
 		}
 	}
 	fmt.Fprintln(w)
