@@ -16,10 +16,10 @@ which can be executed from the command line with the command `./soccer_master`
 which can be executed with the command `soccer_master.exe`.
 
 In either environment the two main modes of operation are to either pipe results into application like so:
-- `cat .\prompt\sample-input.txt | ./soccer_master`
+- `cat ./prompt/sample-input.txt | ./soccer_master`
 
 or pass the filepath of a file to be read for input as an argument like so 
-- `./soccer_master .\prompt\sample-input.txt`
+- `./soccer_master ./prompt/sample-input.txt`
 
 If no argument or pipe is provided the app will await standard input.
 
